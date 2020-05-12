@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiddles</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container flex-align">
+      <div class="nav__left">
+        <h2 class="nav__logo">Fiddles</h2>
+      </div>
+
+      <div class="nav__right">
+        <span class="material-icons nav__savedItems hide">
+          more_horiz
+        </span>
+        <div class="menu"> </div>
+      </div>
+
+      <div class="nav__bg"></div>
+    </div>
+
+  </nav>
+
+  <main class="container" id="mainContainer">
+    <header class="header">
+
+
+      <div class="header__randomContainer">
+        <span class="material-icons header__icon header__icon--inactive" id="unlockTheme">
+          lock_open
+        </span>
+        <span class="header__title">Code a:</span>
+        <span class="header__title header__title--random" id="challengeType">Landing Page</span>
+      </div>
+
+      <div class="header__randomContainer">
+        <span class="material-icons header__icon header__icon--inactive" id="unlockCode">
+          lock_open
+        </span>
+        <span class="header__title">For a: </span>
+        <span class="header__title header__title--random" id="challengeFor">Dance School</span>
+      </div>
+
+      <div class="header__btns">
+
+        <button class="header__btnGenerate "><span class="material-icons">
+            autorenew
+          </span> New Challenge</button>
+        <button class="header__btnSave"> <span class="material-icons">
+            bookmark_border
+          </span>Save</button>
+      </div>
+
+    </header>
+  </main>
+  <script src="../src/JS/index.js"></script>
+</body>
+
+</html>

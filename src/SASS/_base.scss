@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #323335;
+  --white: #ffffff;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 100%;
+  height: 100vh;
+  transition: 0.2s ease-in;
+  background: #29a098;
+  overflow-x: hidden;
+  position: relative;
+}
+html {
+  font-size: 62.5%;
+}
+
+button {
+  outline: none;
+}
