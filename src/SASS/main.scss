@@ -79,12 +79,8 @@
     .material-icons {
       margin-right: 0.4em;
     }
-
-    @media only screen and (max-width: $bp-small) {
-      font-size: 1.3rem;
-    }
     @media only screen and (max-width: $bp-smallest) {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       padding: 0.7em 1.5em;
     }
   }
@@ -265,7 +261,7 @@
   transform: translate(-50%, -50%);
   z-index: 100000;
   padding: 3em;
-
+  color: var(--primary-color);
   &__title {
     color: var(--primary-color);
     font-size: 3rem;
@@ -278,8 +274,8 @@
   }
   &__description {
     font-size: 1.7rem;
-    color: var(--primary-color);
-    font-weight: lighter;
+    color: #454545;
+    font-weight: 400;
     line-height: 1.6;
 
     @media only screen and (max-width: $bp-smallest) {
