@@ -23,11 +23,11 @@ const generateController = () => {
     // if Project Theme is lock
   } else if (!ideaView.randomTypeIsOnlyLock()) {
     elements.body.style.backgroundColor = `${generateRandomColor()}`;
-    elements.randomType.textContent = generateRandomTheme();
+    elements.randomType.textContent = generateRandomCode();
   } else if (!ideaView.randomThemeIsOnlyLock()) {
     // if Code a is lock
     elements.body.style.backgroundColor = `${generateRandomColor()}`;
-    elements.randomFor.textContent = generateRandomCode();
+    elements.randomFor.textContent = generateRandomTheme();
   }
 };
 
@@ -111,17 +111,14 @@ elements.container.addEventListener("click", (e) => {
   } else if (e.target.closest(".header__btnSave")) {
     saveController();
   }
-  // // MODAL
-  // else if (e.target.closest(".faq")) {
-  //   console.log("test");
-  //   IdeaView.showModal();
-  // } else if (e.target.matches(".modal__remove")) {
-  //   ideaView.HideModal();
+
   // }
 });
 
+//toggle menu when icon is clicked
 elements.navSavedItems.addEventListener("click", ideaView.toggleMenu);
 
+// Delete a single item from Menu
 elements.menu.addEventListener("click", (e) => {
   if (e.target.matches(".menu__close")) {
     const favoriteId = e.target.parentElement.dataset.id;
@@ -129,14 +126,15 @@ elements.menu.addEventListener("click", (e) => {
     deleteFavoriteController(favoriteId, card);
   }
 });
-
+// if faq icon is clicked
 elements.faqIcon.addEventListener("click", (e) => {
   if (e.target.closest(".faq")) {
-    ideaView.showModal();
+    ideaView.showElement(elements.modal);
   }
 });
+//remove modal from DOM
 elements.modal.addEventListener("click", (e) => {
   if (e.target.matches(".modal__remove")) {
-    ideaView.HideModal();
+    ideaView.removeElem(elements.modal);
   }
 });

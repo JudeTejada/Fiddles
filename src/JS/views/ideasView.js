@@ -16,23 +16,25 @@ export const checkIfAllAreUnlock = () => {
 
 export const showPopup = (text) => {
   if (elements.popup.classList.contains("hide")) {
-    elements.popup.classList.remove("hide");
+    showElement(elements.popup);
     elements.popup.innerHTML = `<h2>${text}</h2>`;
 
-    setTimeout(removePopup, 2500);
+    setTimeout(() => {
+      removeElem(elements.popup);
+    }, 2500);
+  }
+};
+//remove elem
+export const removeElem = (elm) => elm.classList.add("hide");
+
+//show elem
+export const showElement = (el) => {
+  if (el.classList.contains("hide")) {
+    el.classList.remove("hide");
   }
 };
 
-export const showModal = () => {
-  if (elements.modal.classList.contains("hide")) {
-    elements.modal.classList.remove("hide");
-  }
-};
-
-export const HideModal = () => elements.modal.classList.add("hide");
-
-const removePopup = () => elements.popup.classList.add("hide");
-
+//check if both are locked
 export const checkIfAllAreLocked = () => {
   if (
     elements.iconLockTheme.classList.contains("header__icon--active") &&
@@ -64,6 +66,7 @@ export const randomThemeIsOnlyLock = () => {
     return true;
   }
 };
+//prevents from generating
 export const lock = (elm) => {
   if (elm) {
     elm.classList.replace("header__icon--inactive", "header__icon--active");
@@ -77,6 +80,7 @@ export const unlock = (elm) => {
     elm.textContent = "lock_open";
   }
 };
+//if an idea was saved
 export const isSaved = (saved) => {
   let btn;
   //if its true
@@ -89,6 +93,7 @@ export const isSaved = (saved) => {
   }
 };
 
+//reset btn save
 export const resetSave = () => {
   const btn = document.querySelector(".header__btnSaved");
   if (btn) {
@@ -98,6 +103,7 @@ export const resetSave = () => {
     </span> Saved`;
   }
 };
+//add an Idea to Menu
 export const addToMenu = (idea) => {
   if (idea) {
     const markup = `
@@ -122,6 +128,7 @@ export const addToMenu = (idea) => {
   }
 };
 
+//show menu icon
 export const showMenu = (length) => {
   if (length > 0) {
     elements.navSavedItems.classList.remove("hide");
@@ -130,6 +137,7 @@ export const showMenu = (length) => {
   }
 };
 
+//toggle menu
 export const toggleMenu = () => {
   if (elements.menu.classList.contains("hide")) {
     elements.menu.classList.remove("hide");
@@ -138,6 +146,7 @@ export const toggleMenu = () => {
   }
 };
 
+//delete a single idea from Menu
 export const deleteFavoriteFromMenu = (card) => {
   const parent = card.parentElement;
 

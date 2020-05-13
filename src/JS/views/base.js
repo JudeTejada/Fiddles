@@ -59,7 +59,11 @@ const theme = [
   "yourself",
   "Restaurant Site",
   "Startup Company",
-  "",
+  "Blog Website",
+  "HealthCare",
+  "Church site",
+  "School",
+  "Local Event",
 ];
 const code = [
   "Flip Cards",

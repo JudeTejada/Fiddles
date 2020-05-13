@@ -31,12 +31,16 @@ html {
   @media only screen and (max-width: $bp-large) {
     font-size: 55%;
   }
-}
 
-button {
-  outline: none;
-}
+  @media only screen and (max-width: 320px) {
+    font-size: 40%;
+  }
 
-.mb-2 {
-  margin-bottom: 0.4em;
+  button {
+    outline: none;
+  }
+
+  .mb-2 {
+    margin-bottom: 0.4em;
+  }
 }
