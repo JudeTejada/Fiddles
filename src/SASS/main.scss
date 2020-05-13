@@ -86,9 +86,15 @@
     color: #fff;
   }
   &__btnSaved {
+    cursor: defa;
     border: none;
     background: transparent;
     color: #fff;
+
+    transform: all 0.18s ease;
+    &:active {
+      scale: (0.9);
+    }
   }
   &__title {
     color: var(--primary-color);
@@ -175,4 +181,17 @@
     margin-right: 0.4em;
     margin-bottom: 0.4em;
   }
+}
+
+.popup {
+  background: #fff;
+  position: absolute;
+  padding: 0.5em 4em;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  top: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

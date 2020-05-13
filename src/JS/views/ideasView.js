@@ -14,6 +14,18 @@ export const checkIfAllAreUnlock = () => {
   }
 };
 
+export const showPopup = (text) => {
+  if (elements.popup.classList.contains("hide")) {
+    elements.popup.classList.remove("hide");
+    elements.popup.innerHTML = `<h2>${text}</h2>`;
+
+    setTimeout(removePopup, 2500);
+  }
+};
+
+const removePopup = () => {
+  elements.popup.classList.add("hide");
+};
 export const checkIfAllAreLocked = () => {
   if (
     elements.iconLockTheme.classList.contains("header__icon--active") &&

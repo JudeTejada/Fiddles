@@ -7,6 +7,7 @@ import {
   generateRandomTheme,
   generateRandomCode,
   getTypeAndCode,
+  getRandomtext,
 } from "./views/base";
 
 const state = {};
@@ -31,6 +32,9 @@ const generateController = () => {
 };
 
 const saveController = () => {
+  //display popup
+
+  ideaView.showPopup(getRandomtext());
   // Display btn saved
   ideaView.isSaved(true);
   //get the data

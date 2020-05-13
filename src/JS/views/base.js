@@ -8,6 +8,7 @@ export const elements = {
   btnGenerate: document.querySelector(".header__btnGenerate"),
   menu: document.querySelector(".menu"),
   navSavedItems: document.querySelector(".nav__savedItems"),
+  popup: document.querySelector(".popup"),
 };
 
 export const colors = [
@@ -97,6 +98,15 @@ const code = [
   "Social Buttons",
   "Contact Form",
 ];
+const randomText = [
+  "A Wise Choice",
+  "Excellent Pick",
+  "Wow Can you do it?",
+  "You don't say",
+  "I believe in you",
+  "We are in this together",
+  "Oh yeah",
+];
 
 export const generateRandomColor = () => {
   const idx = Math.floor(Math.random() * colors.length);
@@ -113,6 +123,12 @@ export const generateRandomCode = () => {
   const idx = Math.floor(Math.random() * code.length);
 
   return code[idx];
+};
+
+export const getRandomtext = () => {
+  const idx = Math.floor(Math.random() * randomText.length);
+
+  return randomText[idx];
 };
 
 export const getTypeAndCode = () => {
