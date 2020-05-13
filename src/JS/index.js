@@ -13,21 +13,36 @@ import {
 const state = {};
 
 const generateController = () => {
+  state.randomIdea = {
+    color: generateRandomColor(),
+    code: generateRandomCode(),
+    theme: generateRandomTheme(),
+  };
+
   //reset the saved
   ideaView.resetSave();
   //if both are unlocked
   if (ideaView.checkIfAllAreUnlock()) {
-    elements.body.style.backgroundColor = `${generateRandomColor()}`;
-    elements.randomType.textContent = generateRandomCode();
-    elements.randomFor.textContent = generateRandomTheme();
-    // if Project Theme is lock
+    ideaView.generateRandomThree(
+      state.randomIdea.color,
+      state.randomIdea.code,
+      state.randomIdea.theme
+    );
   } else if (!ideaView.randomTypeIsOnlyLock()) {
-    elements.body.style.backgroundColor = `${generateRandomColor()}`;
-    elements.randomType.textContent = generateRandomCode();
+    ideaView.generateSingleRandom(
+      state.randomIdea.color,
+      state.randomIdea.code,
+      elements.randomType
+    );
   } else if (!ideaView.randomThemeIsOnlyLock()) {
-    // if Code a is lock
-    elements.body.style.backgroundColor = `${generateRandomColor()}`;
-    elements.randomFor.textContent = generateRandomTheme();
+    ideaView.generateSingleRandom(
+      state.randomIdea.color,
+      state.randomIdea.code,
+      elements.randomFor
+    );
+    // // if Code a is lock
+    // elements.body.style.backgroundColor = `${generateRandomColor()}`;
+    // elements.randomFor.textContent = generateRandomTheme();
   }
 };
 
@@ -73,6 +88,17 @@ const init = () => {
   state.idea.ideas.forEach((idea) => ideaView.addToMenu(idea));
 
   ideaView.showMenu(state.idea.checkIdeasLength());
+
+  state.randomIdea = {
+    color: generateRandomColor(),
+    code: generateRandomCode(),
+    theme: generateRandomTheme(),
+  };
+  ideaView.generateRandomThree(
+    state.randomIdea.color,
+    state.randomIdea.code,
+    state.randomIdea.theme
+  );
 };
 init();
 

@@ -1,5 +1,15 @@
 import { elements } from "./base";
 
+export const generateRandomThree = (color, code, theme) => {
+  elements.body.style.backgroundColor = color;
+  elements.randomType.textContent = code;
+  elements.randomFor.textContent = theme;
+  // if Project Theme is lock
+};
+export const generateSingleRandom = (color, code, elm) => {
+  elm.textContent = code;
+  elements.body.style.backgroundColor = color;
+};
 export const checkIfAllAreUnlock = () => {
   if (
     document
