@@ -14,11 +14,13 @@ export const checkIfAllAreUnlock = () => {
   }
 };
 
+//show the popup
 export const showPopup = (text) => {
   if (elements.popup.classList.contains("hide")) {
     showElement(elements.popup);
     elements.popup.innerHTML = `<h2>${text}</h2>`;
 
+    //remove it after 2500
     setTimeout(() => {
       removeElem(elements.popup);
     }, 2500);

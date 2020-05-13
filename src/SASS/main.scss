@@ -63,10 +63,6 @@
   transform: translateY(-50%);
   flex-direction: column;
 
-  @media only screen and (max-width: 400px) {
-    top: 30%;
-  }
-
   &__btns {
     display: flex;
     margin-top: 5.5em;
@@ -194,6 +190,7 @@
   &__content {
     border-bottom: 1px solid #d5d5d5;
     padding: 2em;
+    position: relative;
   }
   &__flex {
     display: flex;
@@ -218,10 +215,11 @@
     cursor: pointer;
     position: absolute;
     right: 0;
-    font-size: 1.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.3rem;
     color: #555;
-    margin-right: 0.4em;
-    margin-bottom: 0.4em;
+    margin-right: 0.6em;
   }
 }
 
@@ -272,12 +270,21 @@
     color: var(--primary-color);
     font-size: 3rem;
     margin-bottom: 0.4em;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
   }
   &__description {
     font-size: 1.7rem;
     color: var(--primary-color);
     font-weight: lighter;
     line-height: 1.6;
+
+    @media only screen and (max-width: $bp-smallest) {
+      font-size: 1.3rem;
+    }
   }
   &__remove {
     cursor: pointer;
