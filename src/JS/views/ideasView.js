@@ -111,12 +111,12 @@ export const addToMenu = (idea) => {
     const markup = `
     <div class="menu__content" data-id="${idea.ID}">
        <div className="menu__flex mb-2">
-          <span class="menu__type">Code A:</span>
+          <span class="menu__type">Code:</span>
           <span class ="menu__type menu__type--random">${idea.type}</span>
       </div>
 
       <div className="menu__flex">
-         <span class="menu__type">For a:</span>
+         <span class="menu__type">For:</span>
           <span class="menu__type menu__type--random">${idea.codeFor}</span>
        </div> 
 
