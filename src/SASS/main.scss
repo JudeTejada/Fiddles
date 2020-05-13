@@ -159,4 +159,13 @@
       color: #777;
     }
   }
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    font-size: 1.6rem;
+    color: #555;
+    margin-right: 0.4em;
+    margin-bottom: 0.4em;
+  }
 }

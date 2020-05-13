@@ -63,7 +63,7 @@ export const addToMenu = (idea) => {
   if (idea) {
     const markup = `
     <div class="menu__content" data-id="${idea.ID}">
-       <div className="menu__flex">
+       <div className="menu__flex mb-2">
           <span class="menu__type">Code A:</span>
           <span class ="menu__type menu__type--random">${idea.type}</span>
       </div>
@@ -73,6 +73,8 @@ export const addToMenu = (idea) => {
           <span class="menu__type menu__type--random">${idea.codeFor}</span>
        </div> 
 
+
+       <span class="material-icons menu__close">delete</span>
  
     </div>
     `;
@@ -95,4 +97,10 @@ export const toggleMenu = () => {
   } else {
     elements.menu.classList.add("hide");
   }
+};
+
+export const deleteFavoriteFromMenu = (card) => {
+  const parent = card.parentElement;
+
+  parent.removeChild(card);
 };

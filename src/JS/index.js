@@ -47,6 +47,17 @@ const saveController = () => {
   ideaView.showMenu(state.idea.checkIdeasLength());
 };
 
+const deleteFavoriteController = (id, card) => {
+  // delete from UI
+
+  ideaView.deleteFavoriteFromMenu(card);
+  // DELETE FROM LOCAL STORAGE
+  state.idea.deleteIdeaFromLS(parseInt(id));
+
+  ideaView.showMenu(state.idea.checkIdeasLength());
+};
+
+//init load
 const init = () => {
   state.idea = new Ideas();
   state.idea.readLocalStorage();
@@ -95,3 +106,11 @@ elements.container.addEventListener("click", (e) => {
 });
 
 elements.navSavedItems.addEventListener("click", ideaView.toggleMenu);
+
+elements.menu.addEventListener("click", (e) => {
+  if (e.target.matches(".menu__close")) {
+    const favoriteId = e.target.parentElement.dataset.id;
+    const card = e.target.parentElement;
+    deleteFavoriteController(favoriteId, card);
+  }
+});

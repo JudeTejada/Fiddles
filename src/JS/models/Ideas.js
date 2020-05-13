@@ -15,6 +15,16 @@ export default class Ideas {
   savedToLS() {
     localStorage.setItem("ideas", JSON.stringify(this.ideas));
   }
+  deleteIdeaFromLS(id) {
+    //get the index
+    console.log(this.ideas);
+    const index = this.ideas.findIndex((el) => el.ID === id);
+
+    //delete idea from LS
+    this.ideas.splice(index, 1);
+    //Update storage
+    this.savedToLS();
+  }
   readLocalStorage() {
     const ideas = JSON.parse(localStorage.getItem("ideas"));
 
