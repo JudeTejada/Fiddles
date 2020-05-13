@@ -2,7 +2,7 @@
 
 A web application where you can find some ideas for your next project.
 
-
+[Check It Live Here](https://fiddles.netlify.app/)
 
 **Getting Started**
 
@@ -23,4 +23,3 @@ Open the link the browser
 ```
 localhost:3000
 ```
-
