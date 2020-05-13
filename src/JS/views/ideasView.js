@@ -23,9 +23,16 @@ export const showPopup = (text) => {
   }
 };
 
-const removePopup = () => {
-  elements.popup.classList.add("hide");
+export const showModal = () => {
+  if (elements.modal.classList.contains("hide")) {
+    elements.modal.classList.remove("hide");
+  }
 };
+
+export const HideModal = () => elements.modal.classList.add("hide");
+
+const removePopup = () => elements.popup.classList.add("hide");
+
 export const checkIfAllAreLocked = () => {
   if (
     elements.iconLockTheme.classList.contains("header__icon--active") &&

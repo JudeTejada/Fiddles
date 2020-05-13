@@ -111,6 +111,13 @@ elements.container.addEventListener("click", (e) => {
   } else if (e.target.closest(".header__btnSave")) {
     saveController();
   }
+  // // MODAL
+  // else if (e.target.closest(".faq")) {
+  //   console.log("test");
+  //   IdeaView.showModal();
+  // } else if (e.target.matches(".modal__remove")) {
+  //   ideaView.HideModal();
+  // }
 });
 
 elements.navSavedItems.addEventListener("click", ideaView.toggleMenu);
@@ -120,5 +127,16 @@ elements.menu.addEventListener("click", (e) => {
     const favoriteId = e.target.parentElement.dataset.id;
     const card = e.target.parentElement;
     deleteFavoriteController(favoriteId, card);
+  }
+});
+
+elements.faqIcon.addEventListener("click", (e) => {
+  if (e.target.closest(".faq")) {
+    ideaView.showModal();
+  }
+});
+elements.modal.addEventListener("click", (e) => {
+  if (e.target.matches(".modal__remove")) {
+    ideaView.HideModal();
   }
 });
