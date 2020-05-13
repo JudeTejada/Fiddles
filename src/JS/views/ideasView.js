@@ -58,7 +58,27 @@ export const unlock = (elm) => {
     elm.textContent = "lock_open";
   }
 };
+export const isSaved = (saved) => {
+  let btn;
+  //if its true
+  if (saved) {
+    btn = document.querySelector(".header__btnSave");
+    btn.classList.replace("header__btnSave", "header__btnSaved");
+    btn.innerHTML = `<span class="material-icons">
+    bookmark
+    </span> Saved`;
+  }
+};
 
+export const resetSave = () => {
+  const btn = document.querySelector(".header__btnSaved");
+  if (btn) {
+    btn.classList.replace("header__btnSaved", "header__btnSave");
+    btn.innerHTML = `<span class="material-icons">
+    bookmark_border
+    </span> Saved`;
+  }
+};
 export const addToMenu = (idea) => {
   if (idea) {
     const markup = `

@@ -17,7 +17,6 @@ export default class Ideas {
   }
   deleteIdeaFromLS(id) {
     //get the index
-    console.log(this.ideas);
     const index = this.ideas.findIndex((el) => el.ID === id);
 
     //delete idea from LS

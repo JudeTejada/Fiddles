@@ -12,6 +12,8 @@ import {
 const state = {};
 
 const generateController = () => {
+  //reset the saved
+  ideaView.resetSave();
   //if both are unlocked
   if (ideaView.checkIfAllAreUnlock()) {
     elements.body.style.backgroundColor = `${generateRandomColor()}`;
@@ -29,6 +31,8 @@ const generateController = () => {
 };
 
 const saveController = () => {
+  // Display btn saved
+  ideaView.isSaved(true);
   //get the data
   const { type, codeFor, ID } = getTypeAndCode();
 

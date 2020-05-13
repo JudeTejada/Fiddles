@@ -85,6 +85,11 @@
     border: 3px solid currentColor;
     color: #fff;
   }
+  &__btnSaved {
+    border: none;
+    background: transparent;
+    color: #fff;
+  }
   &__title {
     color: var(--primary-color);
     font-weight: 700;
@@ -135,6 +140,8 @@
   z-index: 999;
   transition: all 0.2s;
   border-radius: 5px;
+  max-height: 50vh;
+  overflow-y: auto;
 
   &__content {
     border-bottom: 1px solid #d5d5d5;
