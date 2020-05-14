@@ -37,7 +37,7 @@ const generateController = () => {
   } else if (!ideaView.randomThemeIsOnlyLock()) {
     ideaView.generateSingleRandom(
       state.randomIdea.color,
-      state.randomIdea.code,
+      state.randomIdea.theme,
       elements.randomFor
     );
     // // if Code a is lock
