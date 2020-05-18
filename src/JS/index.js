@@ -88,17 +88,8 @@ const init = () => {
   state.idea.ideas.forEach((idea) => ideaView.addToMenu(idea));
 
   ideaView.showMenu(state.idea.checkIdeasLength());
-
-  state.randomIdea = {
-    color: generateRandomColor(),
-    code: generateRandomCode(),
-    theme: generateRandomTheme(),
-  };
-  ideaView.generateRandomThree(
-    state.randomIdea.color,
-    state.randomIdea.code,
-    state.randomIdea.theme
-  );
+  //generate a random idea
+  generateController();
 };
 init();
 
